@@ -76,3 +76,11 @@ Python, PyTorch, pytorch-msssim, NumPy, trained on Google Colab (Tesla T4 GPU).
   Efficient Sub-Pixel Convolutional Neural Network" (PixelShuffle, 2016)
 - Wang et al., "Image Quality Assessment: From Error Visibility to
   Structural Similarity" (SSIM, 2004)
+
+## Running the submission (required entry point)
+python run.py <input-dir> <output-dir>
+- Reads all `.npy` files from `<input-dir>`
+- Writes one restored `.npy` per input, same filename, to `<output-dir>` (created automatically)
+- Output: grayscale float32 array, shape (256, 256), values in [0, 1]
+- No internet access, API keys, or manual configuration required — model weights are loaded from `models/best_model.pth` automatically
+- Runs on GPU if available, falls back to CPU
